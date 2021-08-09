@@ -28,7 +28,9 @@ public class User implements UserDetails, Serializable {
     )
     private Set<Role> roles = new HashSet<>();
 
-
+    @ManyToOne
+    @JoinColumn(name = "reviews_id")
+    private List<Review> reviews = new ArrayList();
 
     public User() {
     }
@@ -75,6 +77,10 @@ public class User implements UserDetails, Serializable {
 
     public Set<Role> getRoles() {
         return roles;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
     }
 
     @Override
