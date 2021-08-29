@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;*/
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "tb_user")
