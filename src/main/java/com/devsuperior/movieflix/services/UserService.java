@@ -49,6 +49,16 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+    @Transactional(readOnly = true)
+    public UserDTO authenticatedUserProfile() {
+
+        User user = authService.autenticated();
+
+        return new UserDTO(user);
+
+    }
+
+
 
 
 }
