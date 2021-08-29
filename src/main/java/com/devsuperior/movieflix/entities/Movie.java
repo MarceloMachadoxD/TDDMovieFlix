@@ -27,7 +27,7 @@ public class Movie implements Serializable {
     @JoinColumn(name = "genre_id")
     private Genre genre;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "reviews_id")
     private List<Review> reviews = new ArrayList<>();
 

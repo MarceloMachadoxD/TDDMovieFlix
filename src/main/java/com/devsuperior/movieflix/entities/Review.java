@@ -16,10 +16,12 @@ public class Review implements Serializable {
     @Column(columnDefinition = "TEXT")
     private String text;
 
-    @OneToMany(mappedBy = "review")
+    @ManyToOne()
+    @JoinColumn(name = "movie_id")
     private Movie movie;
 
-    @OneToMany(mappedBy = "review")
+    @ManyToOne()
+    @JoinColumn(name = "user_id")
     private User user;
 
 

@@ -1,8 +1,8 @@
 package com.devsuperior.movieflix.entities;
 
-import org.springframework.security.core.GrantedAuthority;
+/*import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetails;*/
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "tb_user")
-public class User implements UserDetails, Serializable {
+public class User implements /*UserDetails,*/ Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,9 +28,10 @@ public class User implements UserDetails, Serializable {
     )
     private Set<Role> roles = new HashSet<>();
 
-    @ManyToOne
-    @JoinColumn(name = "reviews_id")
-    private List<Review> reviews = new ArrayList();
+
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews = new ArrayList<>();
+
 
     public User() {
     }
@@ -96,33 +97,41 @@ public class User implements UserDetails, Serializable {
         return Objects.hash(id);
     }
 
-    @Override
+/*    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getAuthority()))
             .collect(Collectors.toList());
-    }
+    }*/
 
-    @Override
+    /*@Override*/
     public String getUsername() {
         return email;
     }
 
+/*
     @Override
+*/
     public boolean isAccountNonExpired() {
         return true;
     }
 
+/*
     @Override
+*/
     public boolean isAccountNonLocked() {
         return true;
     }
 
+/*
     @Override
+*/
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+/*
     @Override
+*/
     public boolean isEnabled() {
         return true;
     }
