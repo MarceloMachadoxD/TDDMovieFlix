@@ -3,6 +3,7 @@ package com.devsuperior.movieflix.services;
 import com.devsuperior.movieflix.Repositories.MovieRepository;
 import com.devsuperior.movieflix.entities.DTO.MovieDTO;
 import com.devsuperior.movieflix.entities.Movie;
+import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,10 +21,10 @@ public class MovieService {
     private AuthService authService;
 
     @Transactional(readOnly = true)
-    public MovieDTO findMovieWithGenre(Long id){
-       Movie obj = movieRepository.findMovieWithGenre(id);
-        return new MovieDTO(obj, obj.getGenre());
+    public MovieDTO findMovieWithGenre(Long id) {
+            Optional<Movie> obj = movieRepository.findMovieWithGenre(id);
+            Movie movie = obj.orElseThrow(() -> new ResourceNotFoundException("Movie not found with id " + id));
+            return new MovieDTO(movie, movie.getGenre());
     }
-
 
 }
