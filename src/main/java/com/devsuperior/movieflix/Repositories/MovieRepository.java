@@ -18,9 +18,14 @@ public interface MovieRepository extends JpaRepository <Movie, Long> {
     Optional<Movie> findMovieWithGenre(Long id);
 
     @Query("SELECT DISTINCT obj FROM Movie obj " +
-            " JOIN obj.genre genre " +
-            "WHERE obj.genre.Id = :genreId  " +
+            "JOIN obj.genre genre " +
+            "WHERE genre.Id = :genreId  " +
             "ORDER BY obj.title")
     Page<Movie> find(Long genreId, Pageable pageable);
+
+    @Query("SELECT DISTINCT obj FROM Movie obj " +
+            "JOIN obj.genre genre " +
+            "ORDER BY obj.title")
+    Page<Movie> find2(Pageable pageable);
 
 }

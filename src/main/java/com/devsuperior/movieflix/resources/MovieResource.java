@@ -27,6 +27,7 @@ public class MovieResource {
             @RequestParam(value = "genreId", defaultValue = "0") Long genreId,
             Pageable pageable){
         Page<MovieDTO> list = movieService.findAllPaged(genreId, pageable);
+        list.getSort();
         return ResponseEntity.ok().body(list);
     }
 }
