@@ -1,4 +1,3 @@
-/*
 package com.devsuperior.movieflix.controllers;
 
 import com.devsuperior.movieflix.entities.DTO.ReviewDTO;
@@ -139,4 +138,3 @@ public class ReviewResourceIT {
 		result.andExpect(status().isUnprocessableEntity());
 	}
 }
-*/
