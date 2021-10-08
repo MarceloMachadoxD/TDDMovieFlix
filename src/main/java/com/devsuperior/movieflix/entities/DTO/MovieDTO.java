@@ -5,45 +5,52 @@ import com.devsuperior.movieflix.entities.Movie;
 
 public class MovieDTO {
 
-    private Long Id;
+    private Long id;
     private String title;
     private String subTitle;
     private Integer year;
     private String imgUrl;
     private String synopsis;
 
-    private Long genreId;
+    private GenreDTO genre;
 
     public MovieDTO() {
     }
 
-    public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis, Long genreId) {
-        Id = id;
+    public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis, GenreDTO genre) {
+        this.id = id;
         this.title = title;
         this.subTitle = subTitle;
         this.year = year;
         this.imgUrl = imgUrl;
         this.synopsis = synopsis;
-        this.genreId = genreId;
+        this.genre = genre;
     }
 
     public MovieDTO(Movie entity) {
-        Id = entity.getId();
+        this.id = entity.getId();
         this.title = entity.getTitle();
         this.subTitle = entity.getSubTitle();
         this.year = entity.getYear();
         this.imgUrl = entity.getImgUrl();
         this.synopsis = entity.getSynopsis();
-        this.genreId = entity.getGenre().getId();
+        this.genre = new GenreDTO(entity.getGenre());
+
     }
+
+    public MovieDTO(Movie entity, Genre genre) {
+        this(entity);
+        this.genre = new GenreDTO(genre);
+    }
+
 
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTitle() {
@@ -86,11 +93,11 @@ public class MovieDTO {
         this.synopsis = synopsis;
     }
 
-    public Long getGenreId() {
-        return genreId;
+    public GenreDTO getGenre() {
+        return genre;
     }
 
-    public void setGenreId(Long genreId) {
-        this.genreId = genreId;
+    public void setGenre(GenreDTO genre) {
+        this.genre = genre;
     }
 }

@@ -20,10 +20,9 @@ public class MovieService {
     private AuthService authService;
 
     @Transactional(readOnly = true)
-    public MovieDTO findById(Long id){
-       Optional<Movie> obj = movieRepository.findById(id);
-       Movie movie = obj.orElseThrow(() -> new EntityNotFoundException("User not found with id " + id));
-        return new MovieDTO(movie);
+    public MovieDTO findMovieWithGenre(Long id){
+       Movie obj = movieRepository.findMovieWithGenre(id);
+        return new MovieDTO(obj, obj.getGenre());
     }
 
 

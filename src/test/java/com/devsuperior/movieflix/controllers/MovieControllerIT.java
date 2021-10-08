@@ -1,4 +1,3 @@
-/*
 package com.devsuperior.movieflix.controllers;
 
 import com.devsuperior.movieflix.tests.TokenUtil;
@@ -196,4 +195,3 @@ public class MovieControllerIT {
 		result.andExpect(jsonPath("$.content[2].title").value("Sonic"));
 	}
 }
-*/

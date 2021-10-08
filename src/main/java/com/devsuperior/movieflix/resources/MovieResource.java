@@ -16,7 +16,7 @@ public class MovieResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<MovieDTO> findById(@PathVariable Long id){
-        MovieDTO movieDTO = movieService.findById(id);
+        MovieDTO movieDTO = movieService.findMovieWithGenre(id);
         return ResponseEntity.ok().body(movieDTO);
     }
 
