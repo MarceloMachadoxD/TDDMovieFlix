@@ -23,8 +23,10 @@ public class MovieResource {
     }
 
     @GetMapping
-    public ResponseEntity<Page<MovieDTO>> findAll(Pageable pageable){
-        Page<MovieDTO> list = movieService.findAllPaged(pageable);
+    public ResponseEntity<Page<MovieDTO>> findAll(
+            @RequestParam(value = "genreId", defaultValue = "0") Long genreId,
+            Pageable pageable){
+        Page<MovieDTO> list = movieService.findAllPaged(genreId, pageable);
         return ResponseEntity.ok().body(list);
     }
 }
