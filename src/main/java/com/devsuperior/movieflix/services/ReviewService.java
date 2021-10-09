@@ -36,8 +36,7 @@ public class ReviewService {
 
         review.setText(dto.getText());
         Optional<Movie> optionalMovie = movieRepository.findMovieWithGenre(dto.getMovieId());
-        Movie movie = optionalMovie.get();
-        review.setMovie(movie);
+        review.setMovie(optionalMovie.get());
 
         User user = userRepository.findByEmail(authService.autenticated().getEmail());
         UserDTO userDTO = new UserDTO(user);
