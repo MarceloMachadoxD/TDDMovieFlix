@@ -33,6 +33,12 @@ public class Review implements Serializable {
         this.text = text;
     }
 
+    public Review(Long id, String text, Movie movie, User user) {
+        Id = id;
+        this.text = text;
+        this.movie = movie;
+        this.user = user;
+    }
 
     public Long getId() {
         return Id;

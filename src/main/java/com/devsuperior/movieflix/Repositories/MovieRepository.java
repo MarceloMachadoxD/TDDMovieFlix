@@ -17,6 +17,9 @@ public interface MovieRepository extends JpaRepository <Movie, Long> {
     @Query("SELECT obj, obj.genre FROM Movie obj WHERE obj.Id = :id")
     Optional<Movie> findMovieWithGenre(Long id);
 
+    @Query("SELECT obj.Id FROM Movie obj WHERE obj.Id = :id")
+    Movie findMovie(Long id);
+
     @Query("SELECT DISTINCT obj FROM Movie obj " +
             "JOIN obj.genre genre " +
             "WHERE genre.Id = :genreId  " +
