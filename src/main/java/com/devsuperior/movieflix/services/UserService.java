@@ -1,7 +1,7 @@
 package com.devsuperior.movieflix.services;
 
 import com.devsuperior.movieflix.Repositories.UserRepository;
-import com.devsuperior.movieflix.entities.DTO.UserDTO;
+import com.devsuperior.movieflix.dto.UserDTO;
 import com.devsuperior.movieflix.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,10 +1,7 @@
 package com.devsuperior.movieflix.resources;
 
-import com.devsuperior.movieflix.entities.DTO.ReviewDTO;
-import com.devsuperior.movieflix.entities.DTO.ReviewDTOWithUserAndMovie;
-import com.devsuperior.movieflix.entities.Movie;
-import com.devsuperior.movieflix.entities.Review;
-import com.devsuperior.movieflix.entities.User;
+import com.devsuperior.movieflix.dto.ReviewDTO;
+import com.devsuperior.movieflix.dto.ReviewDTOWithUserAndMovie;
 import com.devsuperior.movieflix.services.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

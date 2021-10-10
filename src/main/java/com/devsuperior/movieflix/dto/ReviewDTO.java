@@ -1,8 +1,7 @@
-package com.devsuperior.movieflix.entities.DTO;
+package com.devsuperior.movieflix.dto;
 
 import com.devsuperior.movieflix.entities.Review;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 public class ReviewDTO {

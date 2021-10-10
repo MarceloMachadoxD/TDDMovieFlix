@@ -1,4 +1,4 @@
-package com.devsuperior.movieflix.entities.DTO;
+package com.devsuperior.movieflix.dto;
 
 import com.devsuperior.movieflix.entities.User;
 

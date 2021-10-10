@@ -1,7 +1,6 @@
 package com.devsuperior.movieflix.resources;
 
-import com.devsuperior.movieflix.entities.DTO.UserDTO;
-import com.devsuperior.movieflix.services.AuthService;
+import com.devsuperior.movieflix.dto.UserDTO;
 import com.devsuperior.movieflix.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

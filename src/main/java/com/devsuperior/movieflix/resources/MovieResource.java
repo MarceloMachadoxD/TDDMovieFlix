@@ -1,6 +1,6 @@
 package com.devsuperior.movieflix.resources;
 
-import com.devsuperior.movieflix.entities.DTO.MovieDTO;
+import com.devsuperior.movieflix.dto.MovieDTO;
 import com.devsuperior.movieflix.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -2,7 +2,7 @@ package com.devsuperior.movieflix.services;
 
 import com.devsuperior.movieflix.Repositories.GenreRepository;
 import com.devsuperior.movieflix.Repositories.MovieRepository;
-import com.devsuperior.movieflix.entities.DTO.MovieDTO;
+import com.devsuperior.movieflix.dto.MovieDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 @Service

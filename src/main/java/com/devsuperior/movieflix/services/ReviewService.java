@@ -3,14 +3,12 @@ package com.devsuperior.movieflix.services;
 import com.devsuperior.movieflix.Repositories.MovieRepository;
 import com.devsuperior.movieflix.Repositories.ReviewRepository;
 import com.devsuperior.movieflix.Repositories.UserRepository;
-import com.devsuperior.movieflix.entities.DTO.MovieDTO;
-import com.devsuperior.movieflix.entities.DTO.ReviewDTO;
-import com.devsuperior.movieflix.entities.DTO.ReviewDTOWithUserAndMovie;
-import com.devsuperior.movieflix.entities.DTO.UserDTO;
+import com.devsuperior.movieflix.dto.ReviewDTO;
+import com.devsuperior.movieflix.dto.ReviewDTOWithUserAndMovie;
+import com.devsuperior.movieflix.dto.UserDTO;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.entities.Review;
 import com.devsuperior.movieflix.entities.User;
-import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
