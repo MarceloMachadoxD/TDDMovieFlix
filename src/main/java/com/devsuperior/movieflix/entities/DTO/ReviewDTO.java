@@ -2,9 +2,14 @@ package com.devsuperior.movieflix.entities.DTO;
 
 import com.devsuperior.movieflix.entities.Review;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+
 public class ReviewDTO {
 
     private Long id;
+
+    @NotBlank
     private String text;
 
     private Long movieId;
